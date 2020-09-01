@@ -12,7 +12,7 @@ prompt.get(['title', 'description', 'installation', 'usage', 'license_MIT_Apache
     let description = result.description;
     let installation = result.installation;
     let usage = result.usage;
-    let license = (result.license_MIT_Apache_GPL).trim().toLowerCase();
+    let license = (result.license_MIT_Apache_GPL).trim().toUpperCase();
     let contributing = result.contributing;
     let tests = result.tests;
     let questions = result.questions;
@@ -38,7 +38,7 @@ function writeFile(title,description,installation,usage,license,contributing,tes
       if (err) {
         console.log(err);
       }
-      fs.appendFile("README.md", "![license](https://img.shields.io/static/v1?label=license&message=%3CMESSAGE%3E&color=blue)" + '\n\n', function(err) {
+      fs.appendFile("README.md", "![license](https://img.shields.io/static/v1?label=license&message=" + license + "&color=blue)" + '\n\n', function(err) {
         if (err) {
           console.log(err);
         }
@@ -58,14 +58,19 @@ function writeFile(title,description,installation,usage,license,contributing,tes
                 if (err) {
                   console.log(err);
                 }
-                fs.appendFile("README.md", "## Contributing" + '\n' + contributing + '\n\n', function(err) {
+                fs.appendFile("README.md", "## License" + '\n' + license + '\n\n', function(err) {
                   if (err) {
                     console.log(err);
                   }
-                  fs.appendFile("README.md", "## Tests" + '\n' + tests + '\n\n', function(err) {
+                  fs.appendFile("README.md", "## Contributing" + '\n' + contributing + '\n\n', function(err) {
                     if (err) {
                       console.log(err);
                     }
+                    fs.appendFile("README.md", "## Tests" + '\n' + tests + '\n\n', function(err) {
+                      if (err) {
+                        console.log(err);
+                      }
+                    });
                   });
                 });
               });
@@ -76,9 +81,8 @@ function writeFile(title,description,installation,usage,license,contributing,tes
     });
 }
 
-
 function writeLicense() {
-  fs.appendFile("README.md", "## License" + '\n' + "![license](https://img.shields.io/static/v1?label=license&message=%3CMESSAGE%3E&color=blue)" + '\n\n', function(err) {
+  fs.appendFile("README.md", "## License" + '\n' + license + '\n\n', function(err) {
     if (err) {
       console.log(err);
     }
