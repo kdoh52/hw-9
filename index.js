@@ -26,43 +26,43 @@ function onErr(err) {
 
 // writing README file
 function writeFile(title,description,installation,usage,license,contributing,tests,username,email) {
-    fs.appendFile("README.md", "# " + title + '\n\n', function(err) {
+    fs.appendFile("newREADME.md", "# " + title + '\n\n', function(err) {
       if (err) {
         console.log(err);
       }
-      fs.appendFile("README.md", "![license](https://img.shields.io/static/v1?label=license&message=" + license + "&color=blue)" + '\n\n', function(err) {
+      fs.appendFile("newREADME.md", "![license](https://img.shields.io/static/v1?label=license&message=" + license + "&color=blue)" + '\n\n', function(err) {
         if (err) {
           console.log(err);
         }
-        fs.appendFile("README.md", "## Description" + '\n' + description + '\n\n', function(err) {
+        fs.appendFile("newREADME.md", "## Description" + '\n' + description + '\n\n', function(err) {
           if (err) {
             console.log(err);
           }
-          fs.appendFile("README.md", "## Table of Contents" + '\n' + "* [Installation](#installation)" + '\n' + "* [Usage](#usage)" + '\n' + "* [License](#license)" + '\n' + "* [Contributing](#contributing)" +'\n\n', function(err) {
+          fs.appendFile("newREADME.md", "## Table of Contents" + '\n' + "* [Installation](#installation)" + '\n' + "* [Usage](#usage)" + '\n' + "* [License](#license)" + '\n' + "* [Contributing](#contributing)" +'\n\n', function(err) {
             if (err) {
               console.log(err);
             }
-            fs.appendFile("README.md", "## Installation" + '\n' + installation + '\n\n', function(err) {
+            fs.appendFile("newREADME.md", "## Installation" + '\n' + installation + '\n\n', function(err) {
               if (err) {
                 console.log(err);
               }
-              fs.appendFile("README.md", "## Usage" + '\n' + usage + '\n\n', function(err) {
+              fs.appendFile("newREADME.md", "## Usage" + '\n' + usage + '\n\n', function(err) {
                 if (err) {
                   console.log(err);
                 }
-                fs.appendFile("README.md", "## License" + '\n' + license + '\n\n', function(err) {
+                fs.appendFile("newREADME.md", "## License" + '\n' + license + '\n\n', function(err) {
                   if (err) {
                     console.log(err);
                   }
-                  fs.appendFile("README.md", "## Contributing" + '\n' + contributing + '\n\n', function(err) {
+                  fs.appendFile("newREADME.md", "## Contributing" + '\n' + contributing + '\n\n', function(err) {
                     if (err) {
                       console.log(err);
                     }
-                    fs.appendFile("README.md", "## Tests" + '\n' + tests + '\n\n', function(err) {
+                    fs.appendFile("newREADME.md", "## Tests" + '\n' + tests + '\n\n', function(err) {
                       if (err) {
                         console.log(err);
                       }
-                      fs.appendFile("README.md", "## Questions" + '\n' + "GitHub: " + username + '\n' + "[(Visit profile)](https://github.com/" + username + ")" + '\n\n' + "Email: " + email + '\n', function(err) {
+                      fs.appendFile("newREADME.md", "## Questions" + '\n' + "GitHub: " + username + '\n' + "[(Visit profile)](https://github.com/" + username + ")" + '\n\n' + "Email: " + email + '\n', function(err) {
                         if (err) {
                           console.log(err);
                         }

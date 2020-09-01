@@ -1,33 +1,16 @@
-# This is the title
-
-![license](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)
+# HW 9 (Node.js and ES6+): README Generator
 
 ## Description
-This is the description
+This application is a README Generator, intended to be used on the command line. The app prompts the user to input all of the necessary information and then generates the appropriate headings, badges, links, etc.
 
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
+<img src="screenshot.png" alt="screenshot">
 
-## Installation
-How to install
+## Demo video
 
-## Usage
-How to use
+## Credits
+* Javascript
+* Node.js
+* prompt (https://github.com/flatiron)
 
-## License
-MIT
-
-## Contributing
-contributing info
-
-## Tests
-test info
-
-## Questions
-GitHub: kdoh52
-[(Visit profile)](https://github.com/kdoh52)
-
-Email: kdoh52@gmail.com
+## Contact
+* kdoh52@gmail.com
