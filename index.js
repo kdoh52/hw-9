@@ -6,7 +6,7 @@ const prompt = require('prompt');
 
 prompt.start();
 
-prompt.get(['title', 'description', 'installation', 'usage', 'license_MIT_Apache_GPL', 'contributing', 'tests', 'questions'], function (err, result) {
+prompt.get(['title', 'description', 'installation', 'usage', 'license_MIT_Apache_GPL', 'contributing', 'tests', 'github_username', 'email'], function (err, result) {
     if (err) { return onErr(err); }
     let title = result.title;
     let description = result.description;
@@ -15,9 +15,10 @@ prompt.get(['title', 'description', 'installation', 'usage', 'license_MIT_Apache
     let license = (result.license_MIT_Apache_GPL).trim().toUpperCase();
     let contributing = result.contributing;
     let tests = result.tests;
-    let questions = result.questions;
+    let username = result.github_username.trim();
+    let email = result.email.trim();
 
-    writeFile(title,description,installation,usage,license,contributing,tests,questions);
+    writeFile(title,description,installation,usage,license,contributing,tests,username,email);
     // writeTitle(title);
     // writeDesc(description);
     // writeInstall(installation);
@@ -33,7 +34,7 @@ function onErr(err) {
     return 1;
 }
 
-function writeFile(title,description,installation,usage,license,contributing,tests,questions) {
+function writeFile(title,description,installation,usage,license,contributing,tests,username,email) {
     fs.appendFile("README.md", "# " + title + '\n\n', function(err) {
       if (err) {
         console.log(err);
@@ -46,7 +47,7 @@ function writeFile(title,description,installation,usage,license,contributing,tes
           if (err) {
             console.log(err);
           }
-          fs.appendFile("README.md", "## Table of Contents" + '\n' + "* [Installation](#installation)" + '\n' + "* [Usage](#usage)" + '\n' + "* [Contributing](#contributing)" + '\n' + "* [License](#license)" +'\n\n', function(err) {
+          fs.appendFile("README.md", "## Table of Contents" + '\n' + "* [Installation](#installation)" + '\n' + "* [Usage](#usage)" + '\n' + "* [License](#license)" + '\n' + "* [Contributing](#contributing)" +'\n\n', function(err) {
             if (err) {
               console.log(err);
             }
@@ -70,6 +71,11 @@ function writeFile(title,description,installation,usage,license,contributing,tes
                       if (err) {
                         console.log(err);
                       }
+                      fs.appendFile("README.md", "## Questions" + '\n' + "GitHub username: " + username + '\n' + "[Visit profile](https://github.com/" + username + ")" + '\n\n' + "Email: " + email + '\n', function(err) {
+                        if (err) {
+                          console.log(err);
+                        }
+                      });
                     });
                   });
                 });
@@ -81,6 +87,10 @@ function writeFile(title,description,installation,usage,license,contributing,tes
     });
 }
 
+
+
+
+
 function writeLicense() {
   fs.appendFile("README.md", "## License" + '\n' + license + '\n\n', function(err) {
     if (err) {
@@ -89,8 +99,6 @@ function writeLicense() {
   });
 }
 
-// ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
 function writeTOC() {
   fs.appendFile("README.md", "## Table of Contents" + '\n' + "- [Installation](#Installation)" + '\n\n', function(err) {
     if (err) {
@@ -98,8 +106,6 @@ function writeTOC() {
     }
   });
 }
-
-
 
 function writeTitle(title) {
     // console.log(title);
