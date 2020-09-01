@@ -1,9 +1,7 @@
-//hi
 var fs = require("fs");
 
+// flatiron / prompt
 const prompt = require('prompt');
-// const { write } = require('fs');
-
 prompt.start();
 
 prompt.get(['title', 'description', 'installation', 'usage', 'license_MIT_Apache_GPL', 'contributing', 'tests', 'github_username', 'email'], function (err, result) {
@@ -19,14 +17,6 @@ prompt.get(['title', 'description', 'installation', 'usage', 'license_MIT_Apache
     let email = result.email.trim();
 
     writeFile(title,description,installation,usage,license,contributing,tests,username,email);
-    // writeTitle(title);
-    // writeDesc(description);
-    // writeInstall(installation);
-    // writeUsage(usage);
-    // writeLicense(license)
-    // writeContrib(contributing)
-    // writeTests(tests)
-    // writeQuestions(questions)
 });
 
 function onErr(err) {
@@ -34,6 +24,7 @@ function onErr(err) {
     return 1;
 }
 
+// writing README file
 function writeFile(title,description,installation,usage,license,contributing,tests,username,email) {
     fs.appendFile("README.md", "# " + title + '\n\n', function(err) {
       if (err) {
@@ -71,7 +62,7 @@ function writeFile(title,description,installation,usage,license,contributing,tes
                       if (err) {
                         console.log(err);
                       }
-                      fs.appendFile("README.md", "## Questions" + '\n' + "GitHub username: " + username + '\n' + "[Visit profile](https://github.com/" + username + ")" + '\n\n' + "Email: " + email + '\n', function(err) {
+                      fs.appendFile("README.md", "## Questions" + '\n' + "GitHub: " + username + '\n' + "[(Visit profile)](https://github.com/" + username + ")" + '\n\n' + "Email: " + email + '\n', function(err) {
                         if (err) {
                           console.log(err);
                         }
@@ -85,86 +76,4 @@ function writeFile(title,description,installation,usage,license,contributing,tes
         });
       });
     });
-}
-
-
-
-
-
-function writeLicense() {
-  fs.appendFile("README.md", "## License" + '\n' + license + '\n\n', function(err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-}
-
-function writeTOC() {
-  fs.appendFile("README.md", "## Table of Contents" + '\n' + "- [Installation](#Installation)" + '\n\n', function(err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-}
-
-function writeTitle(title) {
-    // console.log(title);
-    fs.appendFile("README.md", "# " + title + '\n\n', function(err) {
-        if (err) {
-          console.log(err);
-        }
-    });
-}
-
-function writeDesc(description) {
-    // console.log(description);
-    fs.appendFile("README.md", "## Description" + '\n' + description + '\n\n', function(err) {
-        if (err) {
-          console.log(err);
-        }
-    });
-}
-
-function writeInstall(installation) {
-    // console.log(installation);
-    fs.appendFile("README.md", "## Installation" + '\n' + installation + '\n\n', function(err) {
-        if (err) {
-          console.log(err);
-        }
-    });
-}
-
-function writeUsage(usage) {
-    // console.log(usage);
-    fs.appendFile("README.md", "## Usage" + '\n' + usage + '\n\n', function(err) {
-        if (err) {
-          console.log(err);
-        }
-    });
-}
-
-function writeLicense(license) {
-    console.log(license);
-}
-
-function writeContrib(contributing) {
-    // console.log(contributing);
-    fs.appendFile("README.md", "## Contributing" + '\n' + contributing + '\n\n', function(err) {
-        if (err) {
-          console.log(err);
-        }
-    });
-}
-
-function writeTests(tests) {
-    // console.log(tests);
-    fs.appendFile("README.md", "## Tests" + '\n' + tests + '\n\n', function(err) {
-        if (err) {
-          console.log(err);
-        }
-    });
-}
-
-function writeQuestions(questions) {
-    console.log(questions);
-}
+};

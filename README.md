@@ -1,6 +1,6 @@
-# This is a title
+# This is the title
 
-![license](https://img.shields.io/static/v1?label=license&message=APACHE&color=blue)
+![license](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)
 
 ## Description
 This is the description
@@ -12,22 +12,22 @@ This is the description
 * [Contributing](#contributing)
 
 ## Installation
-Here are instructions to install
+How to install
 
 ## Usage
-Here is how to use it
+How to use
 
 ## License
-APACHE
+MIT
 
 ## Contributing
-contributing information
+contributing info
 
 ## Tests
-testing information
+test info
 
 ## Questions
-GitHub username: kdoh52
-[Visit profile](https://github.com/kdoh52)
+GitHub: kdoh52
+[(Visit profile)](https://github.com/kdoh52)
 
 Email: kdoh52@gmail.com
