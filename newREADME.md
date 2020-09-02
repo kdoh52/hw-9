@@ -3,7 +3,7 @@
 ![license](https://img.shields.io/static/v1?label=license&message=MIT&color=blue)
 
 ## Description
-This is a description
+This is the description
 
 ## Table of Contents
 * [Installation](#installation)
@@ -21,10 +21,10 @@ How to use
 MIT
 
 ## Contributing
-contribution info
+how to contribute
 
 ## Tests
-test info
+how to test
 
 ## Questions
 GitHub: kdoh52
