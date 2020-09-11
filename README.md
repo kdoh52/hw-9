@@ -6,7 +6,7 @@ This application is a README Generator, intended to be used on the command line.
 <img src="screenshot.png" alt="screenshot">
 
 ## Demo
-(video in repository)
+<a href="https://youtu.be/6z4q3fOh0Ls">YouTube video</a>
 
 ## Credits
 * Javascript
